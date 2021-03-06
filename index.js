@@ -48,7 +48,7 @@ function question(role){
             message: 'What is their Github username?',
             when: (data) => role !== 'Manager' && data.role.indexOf('Engineer') !=-1
         },
-    ]);
+    ])
     .then((data) => {
         try {
             const name = data.name;
@@ -60,15 +60,15 @@ function question(role){
 
             switch(data.role) {
                 case 'Engineer':
-                    employee = new Engineer(name, Id, email, github);
+                    employee = new Engineer(name, ID, email, github);
                     generateFile(employee);
                     break;
                 case 'Intern':
-                    employee = new Intern(name, Id, email, school);
+                    employee = new Intern(name, ID, email, school);
                     generateFile(employee);
                     break;
                 default:
-                    employee = new Manager(name, Id, email, num);
+                    employee = new Manager(name, ID, email, num);
                     generateFile(employee);
                     break;
             }
@@ -161,7 +161,7 @@ function generateFile(employee) {
             break;
 
         case 'Manager':
-            const num = employee.num;
+            const num = employee.ID;
             detail = `
             <div class="row">
                 <div class="col">
@@ -237,7 +237,7 @@ inquirer.prompt([
         name: 'start',
         message: "Let's begin by entering the manager's information.",
     },
-]);
+])
 .then((data) => {
     var role ="Manager";
     question(role);
