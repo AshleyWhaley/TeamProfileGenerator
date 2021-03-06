@@ -1,0 +1,28 @@
+{
+  "name": "hw10",
+  "version": "1.0.0",
+  "description": "A command line application that creates profiles for current staff so one can view their employee information.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshleyWhaley/TeamProfileGenerator.git"
+  },
+  "author": "AshleyWhaley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshleyWhaley/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/AshleyWhaley/TeamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
