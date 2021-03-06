@@ -34,7 +34,7 @@ function question(role){
             type: 'number',
             name: 'num',
             message: 'What is their office number?',
-            whne: (data) => role === 'Manager'
+            when: (data) => role === 'Manager'
         },
         {
             type: 'input',
@@ -157,7 +157,7 @@ function generateFile(employee) {
         </div>
             `;
 
-            card += deatil;
+            card += detail;
             break;
 
         case 'Manager':
@@ -177,7 +177,7 @@ function generateFile(employee) {
             </div>
             `;
 
-            card += deatil;
+            card += detail;
             break;
     }
 
