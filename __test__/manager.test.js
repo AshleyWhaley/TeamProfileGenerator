@@ -2,6 +2,7 @@ const Manager = require("../lib/manager");
 
 describe('Manager', () => {
     describe('const prop', () => {
+
         it('should return correct form of data from const', () => {
             const test = new Manager('six', 6, 'six');
 
@@ -14,9 +15,9 @@ describe('Manager', () => {
         it('should return the name, id, and email from the const', () => {
             const test = new Manager('Ashley', 666, 'crustybeauty@email.com');
 
-            expect(typeof test.name).toBe('Ashley');
-            expect(typeof test.ID).toBe(666);
-            expect(typeof test.email).toBe('crustybeauty@email.com');
+            expect(test.name).toBe('Ashley');
+            expect(test.ID).toBe(666);
+            expect(test.email).toBe('crustybeauty@email.com');
         });
     });
 
@@ -34,7 +35,7 @@ describe('Manager', () => {
         it('should return ID of employee', () => {
             const test = new Manager('Ashley', 666, 'crustybeauty@email.com');
 
-        expect(test.getID()).toBe('666');
+        expect(test.getID()).toBe(666);
         });
     });
 

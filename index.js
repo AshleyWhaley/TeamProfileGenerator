@@ -18,7 +18,7 @@ function question(role){
         {
             type: 'input',
             name: 'name',
-            message: 'What is the employees name?',
+            message: 'What is the employees name?'
         },
         {
             type: 'number',
@@ -39,7 +39,7 @@ function question(role){
         {
             type: 'input',
             name: 'school',
-            message: 'What school did you attend?',
+            message: 'What school did they attend?',
             when: (data) => role !== 'Manager' && data.role.indexOf('Intern') !=-1
         },
         {
@@ -81,14 +81,14 @@ function question(role){
                     default: true
                 }
             ])
-            .then((date) => {
+            .then((data) => {
                 try {
-                    (data.addEmployee) ? question() : generateEmpFile();
+                    (data.addEmployee) ? question() : generateFile();
 
                 } catch (error) {
                     console.log(error);
                 }
-            });
+            })
 
         } catch (error) {
                console.log(error);
@@ -104,19 +104,20 @@ function generateFile(employee) {
 
     let card = `
     <div class="card">
-    <div class="card-header bg-secondary">
-    <h3 class="card-title"> ${name}</h3>
-    <h5 class="card-subtitle mb-2"> ${role}</h5>
-    </div>
+        <div class="card-header bg-secondary">
+            <h3 class="card-title"> ${name} </h3>
+            <h5 class="card-subtitle mb-2"> ${role} </h5>
+        </div>
 
     <div class="card-body">
         <div class="row">
             <div class="col">
-            <p class="card-text"> ID: <p>
-        </div>
-            <div class="col">
-                <p> ${ID}</p>
+                <p class="card-text"> ID: <p>
             </div>
+            <div class="col">
+                <p> ${ID} </p>
+            </div>
+        </div>
     </div>
     `;
 
@@ -161,7 +162,7 @@ function generateFile(employee) {
             break;
 
         case 'Manager':
-            const num = employee.ID;
+            const num = employee.num;
             detail = `
             <div class="row">
                 <div class="col">
@@ -184,8 +185,8 @@ function generateFile(employee) {
     tiles.push(card);
 }
 
-function generateFileCard() {
-    let fileCard = files.join (' ');
+function generateFile() {
+    let fileCard = tiles.join (' ');
     generateHTML(fileCard);
 }
 
@@ -201,7 +202,7 @@ function generateHTML(fileCard) {
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="dist/style.css">
+        
     </head>
     <body>
         <div class="jumbotron jumbotron-fluid bg-dark text-light">

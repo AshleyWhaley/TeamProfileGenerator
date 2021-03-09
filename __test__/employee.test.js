@@ -1,5 +1,5 @@
-const Employee = require("../lib/employee");
 const{it, expect, test, describe} = require("@jest/globals");
+const Employee = require("../lib/employee");
 
 describe('employee', () => {
     describe('const prop', () => {
@@ -15,9 +15,9 @@ describe('employee', () => {
         it('should return the name, id, and email from the const', () => {
             const test = new Employee('Ashley', 666, 'crustybeauty@email.com');
 
-            expect(typeof test.name).toBe('Ashley');
-            expect(typeof test.ID).toBe(666);
-            expect(typeof test.email).toBe('crustybeauty@email.com');
+            expect(test.name).toBe('Ashley');
+            expect(test.ID).toBe(666);
+            expect(test.email).toBe('crustybeauty@email.com');
         });
     });
 
@@ -35,7 +35,7 @@ describe('employee', () => {
         it('should return ID of employee', () => {
             const test = new Employee('Ashley', 666, 'crustybeauty@email.com');
 
-        expect(test.getID()).toBe('666');
+        expect(test.getID()).toBe(666);
         });
     });
 
