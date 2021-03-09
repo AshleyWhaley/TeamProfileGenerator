@@ -83,7 +83,7 @@ function question(role){
             ])
             .then((data) => {
                 try {
-                    (data.addEmployee) ? question() : generateFile();
+                    (data.addEmployee) ? question() : generateFileCard();
 
                 } catch (error) {
                     console.log(error);
@@ -112,13 +112,13 @@ function generateFile(employee) {
     <div class="card-body">
         <div class="row">
             <div class="col">
-                <p class="card-text"> ID: <p>
+                <p class="card-text text-muted"> ID: <p>
             </div>
             <div class="col">
                 <p> ${ID} </p>
             </div>
         </div>
-    </div>
+    
     `;
 
     switch(role) {
@@ -127,15 +127,17 @@ function generateFile(employee) {
             detail = `
             <div class="row">
                 <div class="col">
-                    <p class="card-text">School:</p>
+                    <p class="card-text text-muted">School:</p>
                 </div>
                 <div class="col">
                     <p> ${school}</p>
                 </div>
+                </div>
             </div>
-
             <div class="card-footer">
                 <p id="email-text"><a target="_blank" href="mailto:${email}"> ${email}</a></p>
+                </div>
+                </div>
             </div>
             `;
             card += detail;
@@ -146,15 +148,18 @@ function generateFile(employee) {
             detail = `
             <div class="row">
                 <div class="col">
-                <p class="card-text">Github:</p>
+                <p class="card-text text-muted">Github:</p>
             </div>
             
             <div class="col">
                 <p><a target="_blank" href="https://github.com/${github}"> ${github}</a></p>
-            </div>
-            
+                </div>
+                </div>
+            <div>
             <div class="card-footer">
-            <p id="email-text"><a target="_blank" href="mailto:${email}"> ${email}</a></p>
+                <p id="email-text"><a target="_blank" href="mailto:${email}"> ${email}</a></p>
+            </div>
+        </div>
         </div>
             `;
 
@@ -166,15 +171,18 @@ function generateFile(employee) {
             detail = `
             <div class="row">
                 <div class="col">
-                    <p class="card-text">Office Number:</p>
+                    <p class="card-text text-muted">Office Number:</p>
                 </div>
                 <div class="col">
                     <p> ${num}</p>
+                </div>
                 </div>
             </div>
 
             <div class="card-footer">
                 <p id="email-text"><a target="_blank" href="mailto:${email}"> ${email}</a></p>
+            </div>
+            </div>
             </div>
             `;
 
@@ -185,7 +193,7 @@ function generateFile(employee) {
     tiles.push(card);
 }
 
-function generateFile() {
+function generateFileCard() {
     let fileCard = tiles.join (' ');
     generateHTML(fileCard);
 }
@@ -215,8 +223,7 @@ function generateHTML(fileCard) {
         <div class="container">
             <div class="card-deck">
                 ${fileCard}
-            </div>
-        </div>
+           
         <!--links-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
